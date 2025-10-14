@@ -25,6 +25,8 @@ HTTPS_ENVIRON = {'wsgi.url_scheme': 'https'}
 ######################################################################
 #  T E S T   C A S E S
 ######################################################################
+
+
 class TestAccountService(TestCase):
     """Account Service Tests"""
 
@@ -134,7 +136,6 @@ class TestAccountService(TestCase):
 
         resp = self.client.get(
             f"{BASE_URL}/{account.id}", content_type="application/json"
-            #f"/accounts/{account.id}", content_type="application/json"
         )
         self.assertEqual(resp.status_code, status.HTTP_200_OK)
         data = resp.get_json()
